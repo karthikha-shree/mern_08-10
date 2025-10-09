@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: #3c4858;
+            color: white;
+            padding: 15px 0;
+            position: relative;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .hero {
+            background-color: #3c4858;
+            color: white;
+            padding: 80px 0;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            gap: 50px;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 16px;
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+
+        .btn-primary {
+            background-color: #4285f4;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .hero-image {
+            flex: 1;
+            background-color: #6c757d;
+            height: 300px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .info-section {
+            background-color: #f8f9fa;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .info-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .info-section h2 {
+            font-size: 36px;
+            color: #495057;
+            margin-bottom: 50px;
+        }
+
+        .info-grid {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .info-card {
+            background-color: white;
+            border: 2px solid #4285f4;
+            border-radius: 8px;
+            padding: 40px 20px;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .info-card p {
+            color: #6c757d;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .quote-section {
+            background-color: #e9ecef;
+            padding: 80px 0;
+        }
+
+        .quote-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .quote-text {
+            font-size: 24px;
+            font-style: italic;
+            color: #6c757d;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .quote-author {
+            font-size: 16px;
+            font-weight: bold;
+            color: #495057;
+        }
+
+        .cta-section {
+            background-color: #4285f4;
+            color: white;
+            padding: 60px 0;
+            margin: 40px 20px;
+            border-radius: 8px;
+        }
+
+        .cta-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+        }
+
+        .cta-content h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .cta-content p {
+            opacity: 0.9;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #3c4858;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .footer p {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">Header Logo</div>
+            <nav class="nav-links">
+                <a href="#">header link one</a>
+                <a href="#">header link two</a>
+                <a href="#">header link three</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>This website is awesome</h1>
+                <p>This website has some subtext that goes here under the main title. It's a smaller font and the color is lower contrast</p>
+                <a href="#" class="btn-primary">Sign up</a>
+            </div>
+            <div class="hero-image">
+                this is a placeholder for an image
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <div class="info-container">
+            <h2>Some random information.</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <p>this is some subtext under an illustration or image</p>
+                </div>
+                <div class="info-card">
+                    <p>this is some subtext under an illustration or image</p>
+                </div>
+                <div class="info-card">
+                    <p>this is some subtext under an illustration or image</p>
+                </div>
+                <div class="info-card">
+                    <p>this is some subtext under an illustration or image</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quote-section">
+        <div class="quote-container">
+            <p class="quote-text">This is an inspiring quote, or a testimonial from a customer. Maybe it's just filling up space, or maybe people will actually read it. Who knows? All I know is that it looks nice.</p>
+            <p class="quote-author">-Thor, God of Thunder</p>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-container">
+            <div class="cta-content">
+                <h3>Call to action! It's time!</h3>
+                <p>Sign up for our product by clicking that button right over there!</p>
+            </div>
+            <a href="index.html" class="btn-secondary">Sign up</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>Copyright © The Odin Project 2021</p>
+    </footer>
+</body>
+</html>
