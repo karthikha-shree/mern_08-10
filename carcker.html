@@ -3,6 +3,8 @@
 
 <head>
     <title>CRACKERS CENTER</title>
+    <link href="index.html" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             margin: 0px;
@@ -21,16 +23,47 @@
             background-color: red;
         }
 
-        table,
-        tr,
-        th,
-        td {
-            border: 2px solid black;
-            border-collapse: collapse;
-            background-color:aliceblue;
-            align-items: center;
-            padding: 3px;
-        }
+        /* Table styling */
+    table {
+        width: 90%;
+        margin: 40px auto;
+        border-collapse: collapse;
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    th, td {
+        padding: 12px 15px;
+        border: 2px solid #333;
+        text-align: center;
+    }
+
+    th {
+        background-color: #d84315;
+        color: white;
+        text-transform: uppercase;
+        font-size: 1rem;
+    }
+
+    tr:nth-child(even) {
+        background-color: #ffe0b2;
+    }
+
+    tr:hover {
+        background-color: #ffcc80;
+        transform: scale(1.02);
+        transition: 0.2s ease-in;
+    }
+
+    td[colspan="6"] {
+        background-color: #ff7043;
+        color: white;
+        font-weight: bold;
+        font-size: 1.2rem;
+        text-align: center;
+    }
 
         span {
             font-size: x-large;
@@ -54,9 +87,10 @@
             <h1 style="background-color: lightsalmon;font-style:italic ;font-size: 56px;">
                 Cracker Center</h1>
             <nav style="padding: 5px;">
+                <a href="index.html">Home</a>|
                 <a href="#ViewCategory">Cracker categories</a> |
                 <a href="#Buy">Buy Crackers</a> |
-                <a href="#About">About</a>
+                
             </nav>
         </div>
     </header>
