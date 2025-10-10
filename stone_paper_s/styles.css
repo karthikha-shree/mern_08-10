@@ -1,0 +1,180 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    min-height: 100vh;
+    color: #fff;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+.title {
+    font-size: 3.5rem;
+    margin-bottom: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+.playerScore, .computerScore {
+    text-align: center;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    min-width: 150px;
+}
+
+.vs {
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.choice {
+    height: 60px;
+    margin-top: 1rem;
+    font-size: 2rem;
+}
+
+.count {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.move {
+    font-size: 1.8rem;
+    margin: 1rem 0;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.movesleft {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #FFD700;
+}
+
+.options {
+    display: flex;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.rock, .paper, .scissor {
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    border-radius: 15px;
+    border: none;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.rock:hover, .paper:hover, .scissor:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.result {
+    font-size: 1.5rem;
+    margin: 1.5rem 0;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    text-align: center;
+    min-height: 3.5rem;
+}
+
+.reload {
+    display: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: none;
+    background: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reload:hover {
+    background: #45a049;
+}
+
+/* Animations */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.winner {
+    animation: bounce 0.5s ease;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .score {
+        gap: 2rem;
+    }
+
+    .playerScore, .computerScore {
+        padding: 0.8rem 1.5rem;
+        min-width: 120px;
+    }
+
+    .options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .rock, .paper, .scissor {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .score {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .vs {
+        font-size: 1.5rem;
+    }
+
+    .move {
+        font-size: 1.5rem;
+    }
+}
