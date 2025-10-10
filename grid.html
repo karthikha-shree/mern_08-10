@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid layout</title>
+    <link href="index.html" rel="stylesheet">
+    <style>
+        .grid-container {
+            display:grid;
+            grid-template-areas: "header header "
+                                 "sidebar sidemain"
+                                 "leftsidebar leftmain"
+                                 "rightsidebar rightmain"
+                                 "footer footer";
+            /* grid-template-rows: repeat(8, 4fr); */
+            gap: 10px;
+            padding: 10px;
+            grid-template-columns: repeat(6, 1fr);
+            color:whitesmoke;
+            font-weight: bold;
+
+        }
+        .grid-item1 {
+            grid-area: header;
+            background-color: lightblue;
+            padding: 20px;
+            grid-row-start: 1;
+            grid-column-start: 1;
+            grid-column-end: 16;
+            grid-row-end: 3;
+            /* grid-row: span 6; 
+            grid-column: span 6; */
+            text-align: center;
+        }   
+        .grid-item2 {
+            grid-area: sidebar;
+            background-color: lightgreen;
+            padding: 20px;
+            /* grid-column: span 2;
+            grid-row: span 40; */
+            grid-column-start: 1;
+            grid-row-start: 3;
+            grid-row-end: 40;
+            grid-column-end: 2;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        .grid-item3 {
+            grid-area: sidemain;
+            background-color: lightcoral;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* grid-column: span 4;
+            grid-row: span 20; */
+            grid-column-start: 2;
+            grid-row-start: 3;
+            grid-row-end: 20;
+            grid-column-end: 16;
+            text-align: center;
+        }
+        .grid-item4 {
+            grid-area: leftsidebar;
+            background-color: lightpink;
+            /* grid-row: span 20;
+            grid-column: span 2; */
+            grid-column-start: 2;
+            grid-row-start: 20;
+            grid-row-end: 40;
+            grid-column-end: 5;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .grid-item6 {
+            grid-area: rightsidebar;
+            background-color: rgb(223, 150, 24);
+            /* grid-row: span 20;
+            grid-column: span 2;     */
+            grid-column-start: 5;
+            grid-row-start: 20;
+            grid-row-end: 40;
+            grid-column-end: 16;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .grid-item5 {
+            grid-area: footer;
+            background-color: rgb(76, 73, 73);
+            padding: 20px;
+            /* grid-row: span 6;
+            grid-column: span 6; */
+            grid-row-start: 40;
+            grid-column-start: 1;
+            grid-column-end: 16;
+            grid-row-end: 42;
+            text-align: center;
+
+            color:  whitesmoke;
+            font-weight: bold;
+        }
+        a {
+            text-decoration: none;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item1">header</div>
+        <div class="grid-item2">side bar </div>
+        <div class="grid-item3">main content</div>
+        <div class="grid-item4">left sidebar</div>
+        <div class="grid-item6">right sidebar</div>
+        <div class="grid-item5"><a href="index.html">Footer</a></div>
+        
+
+    </div>
+</body>
+</html>
