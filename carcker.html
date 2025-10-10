@@ -11,7 +11,7 @@
             overflow-x: hidden;
             padding: 0px;
         }
-
+       
         .top-header,
         .top-header h1 {
             position: relative;
@@ -22,7 +22,14 @@
             text-align: center;
             background-color: red;
         }
-        
+        .main-title {
+            font-size: 2.5rem;
+            color: #2c2c2c;
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif;
+            
+            margin: 10px 0;
+        }
         a {
             color:rgba(168, 5, 5, 0.873);
             font-weight: bold;
@@ -75,36 +82,120 @@
             color: firebrick;
             text-align: center;
         }
+    
+    /* ========== FORM SECTION ========== */
+    #Buy {
+      background-color: #fff8e1;
+      padding: 40px;
+      border-radius: 15px;
+      width: 70%;
+      margin: 50px auto;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      animation: fadeIn 1.2s ease;
+    }
+
+    #Buy span {
+      font-size: 2rem;
+      color: #b71c1c;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 15px;
+      text-shadow: 1px 1px 5px orange;
+    }
+
+    form label {
+      font-weight: bold;
+      color: #4e342e;
+      display: inline-block;
+      width: 120px;
+      text-align: right;
+    }
+
+    form input {
+      padding: 8px;
+      width: 50%;
+      margin: 5px;
+      border: 2px solid #ff9800;
+      border-radius: 8px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    form input:focus {
+      border-color: #e65100;
+      box-shadow: 0 0 10px #ffb300;
+    }
+
+    form button {
+      margin-top: 15px;
+      padding: 10px 25px;
+      background: linear-gradient(90deg, #ff3d00, #ff9100);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    form button:hover {
+      transform: scale(1.1);
+      background: linear-gradient(90deg, #ff1744, #ffab40);
+      box-shadow: 0 0 15px gold;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background-color: #212121;
+      color: white;
+      padding: 30px 10px;
+      text-align: center;
+      border-top: 5px solid #ff9800;
+      font-size: 1rem;
+    }
+
+    footer a {
+      color: #ffab40;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      color: #fff176;
+      text-decoration: underline;
+    }
     </style>
 
 </head>
 
-<body style="background-color:goldenrod;">
+<body style="background: radial-gradient(circle, gold, goldenrod, orange); font-family: 'Poppins', sans-serif; color: #2c2c2c;">
+
     <header class="top-header">
-        <div>
-            <marquee width="100%" direction="right" height="100%" scrollamount="5">
-                <h1
-                    style="background-color: red;color: white;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size: medium;font-size: x-large;margin: 0px;">
-                    BOOKINGS OPEN</h1>
+        <div class="booking-banner">
+            <marquee width="100%" direction="right" scrollamount="5" style="font-size:smaller;">
+                <h1>🎇 BOOKINGS OPEN FOR DIWALI CELEBRATION 🎆</h1>
             </marquee>
         </div>
-        <div style="background-color: lightsalmon;">
-            <h1 style="background-color: lightsalmon;font-style:italic ;font-size: 65px;">
-                Cracker Center</h1>
-            <nav style="padding: 5px;">
-                <a href="index.html">Home</a> |
-                <a href="#ViewCategory">Cracker categories</a> |
-                <a href="#Buy">Buy Crackers</a> 
-                
+
+        <div class="header-main">
+            <h1 class="main-title" id="main-title">Cracker Center</h1>
+            <nav style="background-color: #ff9100; padding: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                <a href="index.html">🏠 Home</a> |
+                <a href="#ViewCategory">🎆 Cracker Categories</a> |
+                <a href="#Buy">🛍️ Buy Crackers</a>
             </nav>
         </div>
     </header>
-    <section>
-        <div style="text-align: center;">
-            <marquee direction="up" height="100%" scrollamount="3" style="text-align: center;">
-                this shop provides you the best quality crackers that are made in sivakasi;<br>we give discount upto 60%
-                and save your money<br>
-            </marquee>
+
+    <!-- ✨ Shop Info Section -->
+    <section class="shop-info">
+        <marquee direction="up" scrollamount="1" height="50px" >
+                🎉 This shop provides you with the <strong>best quality crackers</strong> made in <b>Sivakasi</b>!  
+                💥 Enjoy <span style="color: red; font-weight: bold;">up to 60% discounts</span> and make your Diwali sparkle brighter!  
+                🌟 Celebrate safely, celebrate happily!
+            </p>
+        </marquee>
                 <img src="https://i.pinimg.com/1200x/6a/0d/78/6a0d783fde58688366df6affc462b3e0.jpg" width=100%
                     height=700px>
         </div>
@@ -294,24 +385,36 @@
                 </tr>
             </table>
         </div>
-        <div id="Buy" style="text-align:Center">
-            <span>Customer Details</span><br><br>
-            <form>
-                <label for="cname">NAME      :</label>
-                <input type="text" id="cname"><br><br>
-                <label for="add">ADDRESS   :</label>
-                <input type="text" id="add"><br><br>
-                <label for="con">CONTACT no:</label>
-                <input type="text " id="con"><br><br>
-                <button>SUBMIT</button>
-            </form>
-        </div>
     </section>
-    <footer id="About" style="text-align: center;background-color: black;color: white;">
-        <p>Sri Shakthi Nagar, L & T By - Pass,Chinniyampalayam Post, Coimbatore - 62.</p>
-        <p>Mail @ <a href="karthikha.2006@gmail.com" target="_blank">karthikha.2006@gmail.com</a></p>
-        <p>Phone no:9865743210<br/>for hindi:9768543605<br/>for malayalam:6374550972</p>
-    </footer>
+        <!-- CUSTOMER DETAILS FORM -->
+  <section id="Buy">
+    <span>🧾 Customer Details</span>
+    <form>
+      <label for="cname">Name:</label>
+      <input type="text" id="cname" placeholder="Enter your full name" required /><br /><br />
+
+      <label for="add">Address:</label>
+      <input type="text" id="add" placeholder="Your delivery address" required /><br /><br />
+
+      <label for="con">Contact No:</label>
+      <input type="text" id="con" placeholder="e.g. 9876543210" required /><br /><br />
+
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>📍 Sri Shakthi Nagar, L&T By-pass, Chinniyampalayam, Coimbatore - 62.</p>
+    <p>
+      📧 Mail:
+      <a href="mailto:karthikha.2006@gmail.com">karthikha.2006@gmail.com</a>
+    </p>
+    <p>
+      📞 Contact: 9865743210 | हिंदी: 9768543605 | മലയാളം: 6374550972
+    </p>
+    <p>© 2025 Crackers Center | Designed with ❤️ for Diwali</p>
+  </footer>
 </body>
 
 </html><!--img src="https://www.kindpng.com/picc/m/538-5389622_diwali-sale-png-transparent-png.png" width=100%

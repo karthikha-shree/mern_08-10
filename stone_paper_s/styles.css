@@ -6,7 +6,7 @@
 }
 
 body {
-    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    background: linear-gradient(135deg, #08646c, #b21f1f, #fdbb2d);
     min-height: 100vh;
     color: #fff;
 }
@@ -82,7 +82,16 @@ body {
     gap: 1.5rem;
     margin: 2rem 0;
 }
-
+.exit {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: none;
+    background: #f44336;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 .rock, .paper, .scissor {
     padding: 1rem 2rem;
     font-size: 1.5rem;

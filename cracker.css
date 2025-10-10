@@ -6,7 +6,12 @@ body {
     margin: 0;
     padding: 0;
 }
-
+marquee {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #d84315;
+    margin: 15px 0;
+}
 header {
     background-color: #ffeb3b;
     padding: 10px;
