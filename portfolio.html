@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karthikha Shree S M - MERN Stack Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            animation: slideDown 0.5s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        .hero {
+            background: white;
+            margin: 2rem auto;
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            color: #764ba2;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        section {
+            background: white;
+            margin: 2rem auto;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 0.8s ease;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .project-card p {
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: #667eea;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            color: white;
+        }
+
+        .skill-category h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .skill-category li:last-child {
+            border-bottom: none;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: #f5f7fa;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .contact-item:hover {
+            background: #667eea;
+            color: white;
+            transform: translateX(10px);
+        }
+
+        .contact-item a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: white;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">KS</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h1>Karthikha Shree S M</h1>
+            <h2>MERN Stack Developer</h2>
+            <p>Passionate full-stack developer specializing in building scalable web applications with modern technologies. Experienced in MERN stack, Python development, and mobile app development.</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1rem; color: #666;">
+                I'm a dedicated MERN Stack Developer with a strong foundation in full-stack web development and a passion for creating intuitive, user-friendly applications. My expertise spans across MongoDB, Express.js, React, and Node.js, along with experience in Python development and mobile app development using Flutter. I thrive on solving complex problems and building solutions that make a real-world impact.
+            </p>
+        </section>
+
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>📚 College Question Bank System</h3>
+                    <p>A comprehensive full-stack MERN application enabling admins to manage departments, regulations, semesters, subjects, and question papers while providing students with easy access to academic resources.</p>
+                    <div class="tech-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">MongoDB</span>
+                        <span class="tag">Express</span>
+                        <span class="tag">Cloudinary</span>
+                        <span class="tag">JWT</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>📖 CS Course Reference Center</h3>
+                    <p>A dedicated platform for Computer Science department course materials, providing students with organized access to syllabi, notes, and examination papers across multiple regulations.</p>
+                    <div class="tech-tags">
+                        <span class="tag">MERN Stack</span>
+                        <span class="tag">Cloud Storage</span>
+                        <span class="tag">PDF Viewer</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>🛒 E-Commerce Gadget Store (Internship)</h3>
+                    <p>Developed a fully functional e-commerce platform for gadgets with product catalogs, shopping cart functionality, and user authentication using Bootstrap for responsive design.</p>
+                    <div class="tech-tags">
+                        <span class="tag">MERN Stack</span>
+                        <span class="tag">Bootstrap</span>
+                        <span class="tag">REST API</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>🛍️ E-Commerce with Admin & Payment Gateway</h3>
+                    <p>Advanced e-commerce solution featuring comprehensive admin panel for inventory management and integrated payment gateway for secure transactions.</p>
+                    <div class="tech-tags">
+                        <span class="tag">MERN Stack</span>
+                        <span class="tag">Payment Gateway</span>
+                        <span class="tag">Admin Dashboard</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>🎮 The Lost Kingdom of Arthenis</h3>
+                    <p>An interactive text-based adventure game with GUI featuring choice-driven gameplay, inventory system, puzzle-solving mechanics, and multiple endings.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Tkinter</span>
+                        <span class="tag">Pygame</span>
+                        <span class="tag">PIL</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>🤖 AI-Powered Form Filling Assistant</h3>
+                    <p>Innovative AI tool for automating Indian government service forms by extracting data from uploaded documents (Aadhaar, PAN, etc.) with multi-language support and voice input.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">OCR</span>
+                        <span class="tag">AI/ML</span>
+                        <span class="tag">NLP</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>💰 Expense Tracker App</h3>
+                    <p>Cross-platform mobile application for tracking personal expenses with intuitive UI and real-time data synchronization.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Flutter</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">Mobile Development</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Frontend Development</h3>
+                    <ul>
+                        <li>React.js</li>
+                        <li>HTML5 & CSS3</li>
+                        <li>JavaScript (ES6+)</li>
+                        <li>Tailwind CSS</li>
+                        <li>Bootstrap</li>
+                        <li>Responsive Design</li>
+                        <li>Flutter (Mobile)</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Backend Development</h3>
+                    <ul>
+                        <li>Node.js & Express.js</li>
+                        <li>RESTful APIs</li>
+                        <li>MongoDB & Mongoose</li>
+                        <li>Authentication (JWT)</li>
+                        <li>Python</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Tools & Technologies</h3>
+                    <ul>
+                        <li>Git & GitHub</li>
+                        <li>Cloudinary</li>
+                        <li>Postman</li>
+                        <li>VS Code</li>
+                        <li>Payment Gateways</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Specialized Skills</h3>
+                    <ul>
+                        <li>AI/ML Integration</li>
+                        <li>OCR & Document Processing</li>
+                        <li>Game Development (Python)</li>
+                        <li>Full-Stack Architecture</li>
+                        <li>Cloud File Management</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <a href="mailto:karthilkha.2006@gmail.com">karthilkha.2006@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <a href="tel:6374990947">+91 6374990947</a>
+                </div>
+                <div class="contact-item">
+                    <span>💼</span>
+                    <a href="https://www.linkedin.com/in/karthikha-shree-s-m-4315ba296/" target="_blank">LinkedIn Profile</a>
+                </div>
+                <div class="contact-item">
+                    <span>💻</span>
+                    <a href="https://github.com/karthikha-shree" target="_blank">GitHub: @karthikha-shree</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Karthikha Shree S M. All rights reserved.</p>
+    </footer>
+</body>
+</html>
