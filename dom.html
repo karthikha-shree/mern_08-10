@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .exit-btn {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #ff4444;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .exit-btn:hover {
+            background: #cc0000;
+        }
+
+        .event-section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            border-left: 3px solid #007cba;
+        }
+
+        .event-label {
+            font-weight: bold;
+            color: #007cba;
+            margin-bottom: 8px;
+        }
+
+        button {
+            background: #007cba;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background: #005a8a;
+        }
+
+        input {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            width: 200px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #007cba;
+        }
+
+        #mouseDiv {
+            width: 150px;
+            height: 50px;
+            background: #eee;
+            margin: 10px 0;
+            line-height: 50px;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+        }
+
+        #keyPara {
+            background: #fffacd;
+            padding: 8px;
+            border-radius: 4px;
+            margin: 10px 0;
+            border-left: 3px solid #ffc107;
+        }
+
+        #colorPara {
+            background: #007cba;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        #colorPara:hover {
+            background: #6299b6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="exit-btn">← Exit</a>
+        <h2>Simple DOM Event Examples</h2>
+        
+        <div class="event-section">
+            <div class="event-label">Click Event:</div>
+            <button id="btnClick">Click Me</button>
+        </div>
+
+        <div class="event-section">
+            <div class="event-label">Double Click Event:</div>
+            <button id="btnDblClick">Double Click Me</button>
+        </div>
+
+        <div class="event-section">
+            <div class="event-label">Focus/Blur Events:</div>
+            <input id="inputFocus" type="text" placeholder="Focus me" />
+        </div>
+
+        <div class="event-section">
+            <div class="event-label">Change Event:</div>
+            <input id="inputChange" type="text" placeholder="Type and change" />
+        </div>
+
+        <div class="event-section">
+            <div class="event-label">Input Event:</div>
+            <input id="inputInput" type="text" placeholder="Type for input event" />
+        </div>
+
+        <div class="event-section">
+            <div class="event-label">Mouse Over/Out Events:</div>
+            <div id="mouseDiv">Mouse Over/Out</div>
+        </div>
+
+        <div class="event-section">
+            <div class="event-label">Key Events:</div>
+            <p id="keyPara">Press any key in the box below:</p>
+            <input id="inputKey" type="text" placeholder="Type here for key events" />
+        </div>
+
+        <div class="event-section">
+            <div class="event-label">Click to Change Color:</div>
+            <p id="colorPara">TOUCH ME TO CHANGE COLOR</p>
+        </div>
+    </div>
+    <script>
+    // Click event
+    document.getElementById('btnClick').addEventListener('click', function() {
+        alert('Button Clicked!');
+    });
+
+    // Double click event
+    document.getElementById('btnDblClick').addEventListener('dblclick', function() {
+        this.style.background = '#ff6b6b';
+        this.textContent = 'Double Clicked!';
+    });
+
+    // Mouse over/out events
+    const mouseDiv = document.getElementById('mouseDiv');
+    mouseDiv.addEventListener('mouseover', function() {
+        mouseDiv.style.background = '#90ee90';
+        mouseDiv.textContent = 'Mouse Over!';
+    });
+    mouseDiv.addEventListener('mouseout', function() {
+        mouseDiv.style.background = '#eee';
+        mouseDiv.textContent = 'Mouse Out!';
+    });
+
+    // Focus event
+    document.getElementById('inputFocus').addEventListener('focus', function() {
+        this.style.background = '#ffffcc';
+    });
+    document.getElementById('inputFocus').addEventListener('blur', function() {
+        this.style.background = '';
+    });
+
+    // Change event
+    document.getElementById('inputChange').addEventListener('change', function() {
+        alert('Input value changed to: ' + this.value);
+    });
+
+    // Input event
+    document.getElementById('inputInput').addEventListener('input', function() {
+        this.style.background = '#e0f7fa';
+    });
+
+    // Keydown/keyup events
+    const inputKey = document.getElementById('inputKey');
+    const keyPara = document.getElementById('keyPara');
+    inputKey.addEventListener('keydown', function(e) {
+        keyPara.textContent = 'Key Down: ' + e.key;
+    });
+    inputKey.addEventListener('keyup', function(e) {
+        keyPara.textContent = 'Key Up: ' + e.key;
+    });
+
+    // Click event to change color
+    document.getElementById('colorPara').addEventListener('click', function() {
+        this.style.color = this.style.color === 'red' ? 'blue' : 'red';
+    });
+    </script>
+</body>
+</html>
